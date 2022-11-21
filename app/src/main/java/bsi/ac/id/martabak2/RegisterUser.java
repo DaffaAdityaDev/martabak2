@@ -27,8 +27,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private EditText editTextFullName, editTextAge, editTextEmail, editTextPassword;
     private ProgressBar progressBar;
 
-
-
     private FirebaseAuth mAuth;
 
     @Override

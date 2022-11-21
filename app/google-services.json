@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "682249071535",
+    "project_id": "martabak2-a7e19",
+    "storage_bucket": "martabak2-a7e19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682249071535:android:108352bc3c0cd1634a9d5a",
+        "android_client_info": {
+          "package_name": "bsi.ac.id.martabak2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682249071535-j24k2qj5hcguro8t9vkev0hedeeg7pq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9rxaY23iFKgiFUY78WUdRHXC2Qz0DAnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682249071535-j24k2qj5hcguro8t9vkev0hedeeg7pq6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

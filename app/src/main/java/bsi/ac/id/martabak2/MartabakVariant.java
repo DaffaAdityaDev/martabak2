@@ -31,6 +31,9 @@ public class MartabakVariant extends AppCompatActivity implements View.OnClickLi
         switch(v.getId()) {
             case R.id.manis:
                 startActivity(new Intent(this, MartabakManisMenu.class));
+                break;
+            case R.id.telur:
+                startActivity(new Intent(this, MartabakTelurMenu.class));
         }
     }
 }

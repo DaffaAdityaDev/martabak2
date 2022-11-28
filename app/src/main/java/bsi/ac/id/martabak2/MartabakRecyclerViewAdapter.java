@@ -13,11 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MartabakRecyclerViewAdapter extends RecyclerView.Adapter<MartabakRecyclerViewAdapter.MyViewHolder> {
+    private final RecyclerViewInterface recyclerViewInterface;
+
     Context context;
     ArrayList<Martabak> MartabakModel;
-    public MartabakRecyclerViewAdapter(Context context, ArrayList<Martabak> MartabakModel) {
+
+    public MartabakRecyclerViewAdapter(Context context, ArrayList<Martabak> MartabakModel,
+                                       RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
         this.MartabakModel = MartabakModel;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
@@ -26,17 +31,15 @@ public class MartabakRecyclerViewAdapter extends RecyclerView.Adapter<MartabakRe
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recycler_view_row, parent, false);
 
-        return new MartabakRecyclerViewAdapter.MyViewHolder(view);
+        return new MartabakRecyclerViewAdapter.MyViewHolder(view, recyclerViewInterface);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MartabakRecyclerViewAdapter.MyViewHolder holder, int position) {
         holder.imageView.setImageResource(MartabakModel.get(position).getImage());
-        holder.tvName.setText(MartabakModel.get(position).getNama());
-        holder.tvBintang.setText(MartabakModel.get(position).getNama());
-        holder.tvPrice.setText(MartabakModel.get(position).getNama());
-
-
+        holder.tvMartabakNama.setText(MartabakModel.get(position).getNama());
+        holder.tvBintang.setText(MartabakModel.get(position).getBintang());
+        holder.tvPrice.setText(MartabakModel.get(position).getHarga());
     }
 
     @Override
@@ -47,14 +50,28 @@ public class MartabakRecyclerViewAdapter extends RecyclerView.Adapter<MartabakRe
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imageView;
-        TextView tvName, tvPrice, tvBintang;
-        public MyViewHolder(@NonNull View itemView) {
+        TextView tvMartabakNama, tvPrice, tvBintang;
+
+        public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageView);
-            tvName = itemView.findViewById(R.id.textView);
-            tvPrice = itemView.findViewById(R.id.textView2);
-            tvBintang = itemView.findViewById(R.id.textView3);
+            tvMartabakNama = itemView.findViewById(R.id.MartabakNama);
+            tvPrice = itemView.findViewById(R.id.MartabakPrice);
+            tvBintang = itemView.findViewById(R.id.MartabakBintang);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(recyclerViewInterface != null) {
+                        int pos = getAdapterPosition();
+
+                        if(pos != RecyclerView.NO_POSITION) {
+                            recyclerViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 

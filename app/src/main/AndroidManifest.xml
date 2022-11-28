@@ -10,6 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Martabak2">
         <activity
+            android:name=".FinisPayment"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MartabakTelurMenu"
+            android:exported="false"
+            android:label="@string/title_activity_martabak_telur_menu">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MartabakPayment"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MartabakManisMenu"
             android:exported="false">
             <meta-data

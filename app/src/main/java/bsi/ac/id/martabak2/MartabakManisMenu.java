@@ -13,7 +13,6 @@ public class MartabakManisMenu extends AppCompatActivity implements RecyclerView
     ArrayList<Martabak> MartabakModel = new ArrayList<>();
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +49,7 @@ public class MartabakManisMenu extends AppCompatActivity implements RecyclerView
         intent.putExtra("MartabakName", MartabakModel.get(position).getNama());
         intent.putExtra("MartabakImage", MartabakModel.get(position).getImage());
         intent.putExtra("MartabakPrice", MartabakModel.get(position).getHarga());
-
+        intent.putExtra("position", position);
 
         startActivity(intent);
     }

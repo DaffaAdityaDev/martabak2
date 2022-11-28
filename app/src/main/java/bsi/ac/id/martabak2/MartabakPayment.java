@@ -29,9 +29,18 @@ public class MartabakPayment extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 Intent Intent = new Intent(MartabakPayment.this, FinisPayment.class);
+                int position = getIntent().getIntExtra("position", 0);
+                int martabakImg = getIntent().getIntExtra("MartabakImage", 0);
+                String matabakName = getIntent().getStringExtra("MartabakName");
+
+                Intent.putExtra("martabakName", matabakName);
+                Intent.putExtra("total", total);
+                Intent.putExtra("position", position);
+                Intent.putExtra("martabakImg", martabakImg);
                 startActivity(Intent);
             }
         });
+
         TextView increment = (TextView) findViewById(R.id.increment);
         TextView decrement = (TextView) findViewById(R.id.decrement);
         increment.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +52,7 @@ public class MartabakPayment extends AppCompatActivity  {
                 ViewTotal.setText(String.valueOf(total));
             }
         });
+
         decrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +82,7 @@ public class MartabakPayment extends AppCompatActivity  {
         TextMartabakPrice.setText(MartabakPrice);
         ViewMartabakImg.setImageResource(MartabakImg);
         ViewMartabakJumlah.setText(String.valueOf(jumlah));
+        total = jumlah * harga;
         ViewTotal.setText(String.valueOf(total));
 
     }

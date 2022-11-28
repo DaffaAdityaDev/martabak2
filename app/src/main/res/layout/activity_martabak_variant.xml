@@ -8,19 +8,18 @@
 
     <Button
         android:id="@+id/manis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_width="247dp"
+        android:layout_height="144dp"
+        android:layout_marginTop="84dp"
         android:text="manis"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/telur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="247dp"
+        android:layout_height="144dp"
         android:layout_marginTop="228dp"
         android:text="telur"
         app:layout_constraintBottom_toBottomOf="parent"

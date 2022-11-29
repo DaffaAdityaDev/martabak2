@@ -18,7 +18,7 @@ public class FinisPage extends AppCompatActivity {
         buttonKembali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FinisPage.this, MainActivity.class));
+                startActivity(new Intent(FinisPage.this, MartabakVariant.class));
             }
         });
     }

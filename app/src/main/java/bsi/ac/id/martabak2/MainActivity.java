@@ -31,16 +31,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        startActivity(new Intent(this, MartabakVariant.class));
+//        startActivity(new Intent(this, ProfileActivity.class));
+
+        editTextEmail = (EditText) findViewById(R.id.email);
+        editTextPassword = (EditText) findViewById(R.id.password);
+        editTextEmail.setText("dap1@gmail.com");
+        editTextPassword.setText("1234567");
 
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
 
         signIn = (Button) findViewById(R.id.signIn);
         signIn.setOnClickListener(this);
-
-        editTextEmail = (EditText) findViewById(R.id.email);
-        editTextPassword = (EditText) findViewById(R.id.password);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
@@ -63,6 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
+
+
         if(email.isEmpty()) {
             editTextEmail.setError("Email is required!");
             editTextEmail.requestFocus();
@@ -82,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
               if(task.isSuccessful()) {
                   startActivity(new Intent(MainActivity.this, MartabakVariant.class));
               } else {
+                  progressBar.setVisibility(View.GONE);
                   Toast.makeText(MainActivity.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
               }
             }

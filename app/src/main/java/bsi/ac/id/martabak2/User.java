@@ -2,16 +2,27 @@ package bsi.ac.id.martabak2;
 
 public class User {
 
-    public String fullName, age, email;
+    public String fullName, alamat, email;
 
     public User() {
 
     }
 
-    public User(String fullName, String age, String email) {
+    public User(String fullName, String alamat, String email) {
         this.fullName = fullName;
-        this.age = age;
+        this.alamat = alamat;
         this.email = email;
     }
-    
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }

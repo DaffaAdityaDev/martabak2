@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -72,15 +73,15 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
         String fullName = editTextFullName.getText().toString().trim();
-        String age = editTextAge.getText().toString().trim();
+        String alamat = editTextAge.getText().toString().trim();
 
         if(fullName.isEmpty()) {
             editTextFullName.setError("Full name is required");
             editTextFullName.requestFocus();
             return;
         }
-        if(age.isEmpty()){
-            editTextAge.setError("age is required!");
+        if(alamat.isEmpty()){
+            editTextAge.setError("alamat is required!");
             editTextAge.requestFocus();
             return;
         }
@@ -90,7 +91,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             return;
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setError("Please Provide valid emai!");
+            editTextEmail.setError("Please Provide valid email!");
             editTextEmail.requestFocus();
         }
         if(password.isEmpty()){
@@ -110,8 +111,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+//                        Log.d("mytag", task.toString());
                         if(task.isSuccessful()) {
-                            User user = new User(fullName, age, email);
+                            User user = new User(fullName, alamat, email);
 
                             FirebaseDatabase.getInstance("https://martabak2-a7e19-default-rtdb.asia-southeast1.firebasedatabase.app/")
                                     .getReference("Users")

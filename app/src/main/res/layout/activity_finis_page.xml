@@ -29,11 +29,13 @@
 
     <TextView
         android:id="@+id/alamatfinispage"
-        android:layout_width="75dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="354dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="56dp"
+        android:gravity="center|center_horizontal|center_vertical"
         android:text="TextView"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 </androidx.constraintlayout.widget.ConstraintLayout>

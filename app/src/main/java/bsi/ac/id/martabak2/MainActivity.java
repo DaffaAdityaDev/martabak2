@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
-        editTextEmail.setText("dap1@gmail.com");
-        editTextPassword.setText("1234567");
+//        editTextEmail.setText("dap1@gmail.com");
+//        editTextPassword.setText("1234567");
 
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
